@@ -1,8 +1,92 @@
 body {
 }
 
+.map-wrapper {
+  width: 100%;
+  max-width: 800px;
+}
+
 #map {
   width: 100%;
   max-width: 800px;
   height: 600px;
+}
+
+.mapboxgl-popup-content p {
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+
+.mapboxgl-popup-content p:nth-child(5) {
+  margin: 0;
+}
+
+.mapboxgl-popup-content a {
+  font-weight: bold;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.key {
+  font-family:Arial, Helvetica, sans-serif;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.key li {
+  margin: 0 1.5rem 0 0;
+}
+
+.cluster {
+  display: inline-block;
+  margin: 0 4px 0 0;
+  border-radius: 50%;
+}
+
+.cluster1 {
+  width: 15px;
+  height: 15px;
+  background-color: #ffe866;
+  transform: translate(0, 1px)
+}
+
+.cluster2 {
+  width: 25px;
+  height: 25px;
+  background-color: #ffdd1a;
+  transform: translate(0, 7px)
+}
+
+.cluster3 {
+  width: 35px;
+  height: 35px;
+  background-color: #e6c300;
+  transform: translate(0, 12px)
+}
+
+.prop {
+  display: inline-block;
+  margin: 0 4px 0 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid white;
+  transform: translate(0, 2px)
+}
+
+.prop--resi {
+  background-color: #51bbd6;
+}
+
+.prop--comm {
+  background-color: #F1A340;
+}
+
+.prop--vacant {
+  background-color: #998EC3;
 }
