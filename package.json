@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx browser-sync start --server 'public' --files 'public'"
+    "start": "npx browser-sync start --server --files"
   },
   "keywords": [],
   "author": "",
