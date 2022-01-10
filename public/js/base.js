@@ -5,8 +5,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibHVjaWRhLW1hcHMiLCJhIjoiY2t5MjM3NGZmMGd3bzJxb
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/light-v10',
-  center: [-87.847155, 41.879420],
-  zoom: 8
+  center: [-87.847155, 41.839420],
+  zoom: 8.5
 });
 
 map.addControl(
@@ -28,6 +28,22 @@ map.on('load', () => {
     clusterRadius: 50
   });
 
+  map.addSource('cook', {
+    type: 'geojson',
+    data: 'cook-co.geojson'
+  })
+
+  map.addLayer({
+    id: 'outline',
+    type: 'line',
+    source: 'cook',
+    layout: {},
+    paint: {
+      'line-color': '#808080',
+      'line-width': 3
+    }
+  })
+
   map.addLayer({
     id: 'clusters',
     type: 'circle',
@@ -42,11 +58,11 @@ map.on('load', () => {
       'circle-color': [
         'step',
         ['get', 'point_count'],
-        '#ffe866',
+        '#ffee8d',
         100,
         '#ffdd1a',
         1000,
-        '#e6c300'
+        '#ccb115'
       ],
       'circle-radius': [
         'step',
@@ -118,7 +134,7 @@ map.on('load', () => {
   map.on('click', 'unclustered-point', (e) => {
     const coordinates = e.features[0].geometry.coordinates.slice();
     const dotProps = e.features[0].properties;
-    const popupContent = `<p class='bold-text'>Pin: ${dotProps.pin}</p><p class='bold-text'>${dotProps.address}, ${dotProps.city}</p><p>Class: ${dotProps.class}</p><p>2020 taxes: ${dotProps.taxes}</p>` + `<p><a target='_blank' href='${dotProps.map}'>LINK</a></p>`
+    const popupContent = `<p class='bold-text'>${dotProps.pin}</p><p class='bold-text'>${dotProps.address}, ${dotProps.city}</p><p>${dotProps.class}</p><p>2020 taxes billed: ${dotProps.taxes}</p>` + `<p><a target='_blank' href='${dotProps.map}'>CookViewer map</a></p>`
 
     // Ensure that if the map is zoomed out such that
     // multiple copies of the feature are visible, the
