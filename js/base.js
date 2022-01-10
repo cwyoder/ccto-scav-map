@@ -1,7 +1,7 @@
 // TO MAKE THE MAP APPEAR YOU MUST
 // ADD YOUR ACCESS TOKEN FROM
 // https://account.mapbox.com
-mapboxgl.accessToken = 'pk.eyJ1IjoibWVwb2Rtb2xpayIsImEiOiJja3k5NmE4NmIwMWgzMm9tZ3RteTYyaXY3In0.VFTaG_ZP3juiVbJRDBmSjw';
+mapboxgl.accessToken = '';
 const boundaries = [
   [-89.340000, 40.892000], // Southwest
   [-86.118000, 42.579000] // Northeast
