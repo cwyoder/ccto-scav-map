@@ -90,3 +90,14 @@ body {
 .prop--vacant {
   background-color: #998EC3;
 }
+
+@media all and (max-width: 560px) {
+  .key {
+    display: block;
+    margin: 0 0 2rem 0;
+  }
+
+  .key li {
+    margin: 10px 0;
+  }
+}

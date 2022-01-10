@@ -137,7 +137,7 @@ map.on('load', () => {
   map.on('click', 'unclustered-point', (e) => {
     const coordinates = e.features[0].geometry.coordinates.slice();
     const dotProps = e.features[0].properties;
-    const popupContent = `<p class='bold-text'>${dotProps.pin}</p><p class='bold-text'>${dotProps.address}, ${dotProps.city}</p><p>${dotProps.class}</p><p>2020 taxes billed: ${dotProps.taxes}</p>` + `<p><a target='_blank' href='${dotProps.map}'>CookViewer map</a></p>`
+    const popupContent = `<p class='bold-text'>${dotProps.pin}</p><p class='bold-text'>${dotProps.address}., ${dotProps.city}</p><p>${dotProps.class}</p><p>2020 taxes billed: ${dotProps.taxes}</p>` + `<p><a target='_blank' href='${dotProps.map}'>CookViewer map</a></p>`
 
     // Ensure that if the map is zoomed out such that
     // multiple copies of the feature are visible, the
