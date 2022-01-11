@@ -15,12 +15,10 @@ const map = new mapboxgl.Map({
   maxBounds: boundaries
 });
 
-map.addControl(
-  new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl
-  })
-);
+// Zoom and rotation controls
+map.addControl(new mapboxgl.NavigationControl({
+  showCompass: false
+}));
 
 map.on('load', () => {
   // Add a new source from our GeoJSON data and
